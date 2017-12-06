@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mon.package">
+  <class name="persist.UnePersonne" table="pers">
+  	<id name="p_id" >
+  		<column name="p_ID"/>
+  		<generator class="increment"/>
+  	</id>
+  	
+  	<property name="nom">
+      <column name="NOM" length="16" not-null="true"/> 
+    </property>
+    <property name="prenom">
+      <column name="prenom" length="16" not-null="true"/> 
+    </property>
+    <property name="age">
+      <column name="age" length="16" not-null="true"/> 
+    </property>
+  	
+  	
+  	<component name="a" class="persist.adresse">
+  		<property name="rue"></property>
+  		<property name="ville"></property>
+  	</component>
+  	
+  	<set name="lesNotes"  cascade="all" >
+  		<key column ="pers"></key>
+  		<one-to-many class="persist.Note"/>
+  	</set>
+  </class>
+</hibernate-mapping>

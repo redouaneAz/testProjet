@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mon.package">
+  <class name="persist.Note" table="note">
+  	<id name="id" >
+  		<column name="n_ID"/>
+  		<generator class="increment"/>
+  	</id>
+  	
+  	<property name="note1">  </property>
+    <property name="matieres"></property>
+    
+  </class>
+</hibernate-mapping>
