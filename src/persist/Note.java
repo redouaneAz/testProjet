@@ -1,7 +1,7 @@
 package persist;
 
 public class Note {
-
+// redouane
 	
 	private Long id;
 	private Long note1;
